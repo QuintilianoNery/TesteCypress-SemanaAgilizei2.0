@@ -29,6 +29,18 @@ context('Compras', () => {
         .first()
         .click();
 
+        //validar se o produto foi adicionado ao carrinho com sucesso
+        cy.get('.icon-ok')
+        .parent('')//h2
+        .should('contain.text','Product successfully added to your shopping cart');
+
+        //validar se o nome do produto é o mesmo informado na home page
+        cy.get('span#layer_cart_product_title')
+        .should('contain.text', nomeProduto);
+
+        //#####parei 08:03s
+        cy.pause();
+
         //pai que tenha um filho do tipo a e que tenha um atributo href e que contenha no final o texto controller=order
         cy.get(".button-container a[href$='controller=order']").click();
         cy.get(".cart_navigation a[href$='order&step=1']").click();
@@ -69,7 +81,7 @@ context('Compras', () => {
 });
 
 //#ajuda
-//1 - Geralmente não deve se usar o describe para criar os testes, qual a diferença entre o describe e o context?
+//1 - Geralmente se usa o describe para criar os testes, qual a diferença entre o describe e o context?
 
 
 //comandos
