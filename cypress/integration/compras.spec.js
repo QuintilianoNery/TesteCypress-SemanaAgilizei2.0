@@ -39,7 +39,7 @@ context('Compras', () => {
         .should('contain.text', nomeProduto);
 
         //#####parei 08:03s
-        cy.pause();
+        //cy.pause();
 
         //pai que tenha um filho do tipo a e que tenha um atributo href e que contenha no final o texto controller=order
         cy.get(".button-container a[href$='controller=order']").click();
