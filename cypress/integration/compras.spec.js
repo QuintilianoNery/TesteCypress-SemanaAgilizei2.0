@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 context('Compras', () => {
-    it('Efetuar uma compra de produto', () => {
+    it('Efetuar uma compra do produto - Faded Short Sleeve T-shirts', () => {
         //Já que o endereço foi informado no cypress.js, como URL padrão, é só colocar cy.visit('/');
         cy.visit('/');
         
@@ -64,8 +64,14 @@ context('Compras', () => {
         cy.get('.cheque-indent strong')
         //pode-se usar o Expect ou o should - forma explícita e implícita
         .should('contain.text', 'Your order on My Store is complete.')
-    });
+    });   
+    
 });
 
 //#ajuda
 //1 - Geralmente não deve se usar o describe para criar os testes, qual a diferença entre o describe e o context?
+
+
+//comandos
+//npx cypress open
+//npx cypress run - Modo headless sem a interface mas com o vídeo
