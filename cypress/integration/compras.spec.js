@@ -55,8 +55,6 @@ context('Compras', () => {
         cy.get('[type=checkbox]#addressesAreEquals').should('have.attr', 'checked', 'checked');
         cy.get('[type=checkbox]#addressesAreEquals').should('have.attr', 'name', 'same');
 
-        cy.pause();
-
         cy.get('button[name=processAddress]').click();
 
         //Etapa de entrega
@@ -74,6 +72,17 @@ context('Compras', () => {
         .find('span')
         .contains("I confirm my order")
         .click();
+
+        //filtrar o ID do conteúdo do texto e usar para filtrar nos pedidos
+        //1. capturar o texto do box
+        cy.get('div.box').invoke('text').then((text) =>{
+            console.log(text);
+        })
+
+        //################# Parei aqui 26:33
+        //2. filtrar o texto do box, para extrair somente o ID do pedido
+        //3. armazenar o ID do pedido de alguma forma
+        //4. obter o id do pedido armazenado de alguma forma
 
         //verificar a ultima tela
         cy.get('.cheque-indent strong')
