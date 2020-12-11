@@ -38,9 +38,6 @@ context('Compras', () => {
         cy.get('span#layer_cart_product_title')
         .should('contain.text', nomeProduto);
 
-        //#####parei 08:03s
-        //cy.pause();
-
         //pai que tenha um filho do tipo a e que tenha um atributo href e que contenha no final o texto controller=order
         cy.get(".button-container a[href$='controller=order']").click();
         cy.get(".cart_navigation a[href$='order&step=1']").click();
@@ -53,6 +50,12 @@ context('Compras', () => {
 
         //validação na tela de confirmação de endereços
         //[type=checkbox]#addressesAreEquals
+        //tipo de asserção | Atributo | valor
+        //Validar o valor de um determinado atributo
+        cy.get('[type=checkbox]#addressesAreEquals').should('have.attr', 'checked', 'checked');
+        cy.get('[type=checkbox]#addressesAreEquals').should('have.attr', 'name', 'same');
+
+        cy.pause();
 
         cy.get('button[name=processAddress]').click();
 
