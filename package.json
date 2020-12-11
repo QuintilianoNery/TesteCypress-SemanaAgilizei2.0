@@ -6,7 +6,7 @@
   "scripts": {
     "cy:open": "npx cypress open",
     "projectId": "vasjsf",
-    "cy:run": "npx cypress run --record --key a4195cd6-5c0c-4bb9-8f1e-e1aea3abed6d"
+    "cy:run": "npx cypress run --record --key a4195cd6-5c0c-4bb9-8f1e-e1aea3abed6d --brouser chrome"
   },
   "repository": {
     "type": "git",

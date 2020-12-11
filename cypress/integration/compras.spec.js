@@ -74,26 +74,45 @@ context('Compras', () => {
         .click();
 
         //filtrar o ID do conteúdo do texto e usar para filtrar nos pedidos
-        //1. capturar o texto do box
+            //1. capturar o texto do box
         cy.get('div.box').invoke('text').then((text) =>{
-            console.log(text);
+            console.log(text)
+            
+            //2. filtrar o texto do box, para extrair somente o ID do pedido com expressões regulares
+            //filtrando tudo que começa é termina com letras de A a Z maiúscula, e informando que deseja somente a posição 2 que é o 1
+            console.log(text.match(/[A-Z][A-Z]+/g)[1])
+            
+            //3. armazenar o ID do pedido de alguma forma
+            //escrita de um  arquivo json com o conteúdo do pedido
+            //Três parâmetros, caminho do arquivo (sempre a partir do root )| conteúdo do arquivo
+            cy.writeFile('cypress/fixtures/pedidos.json', {id:`${ text.match(/[A-Z][A-Z]+/g)[1] }`})   
+            //####################48:03
+            
         })
-
-        //################# Parei aqui 26:33
-        //2. filtrar o texto do box, para extrair somente o ID do pedido
-        //3. armazenar o ID do pedido de alguma forma
-        //4. obter o id do pedido armazenado de alguma forma
 
         //verificar a ultima tela
         cy.get('.cheque-indent strong')
         //pode-se usar o Expect ou o should - forma explícita e implícita
-        .should('contain.text', 'Your order on My Store is complete.')
+        .should('contain.text', 'Your order on My Store is complete.');            
+
+            //4. obter o id do pedido armazenado de alguma forma
+            cy.get(".cart_navigation a[href$='history']").click()
+
+            //leitura de um arquivo
+            cy.readFile('cypress/fixtures/pedidos.json').then((pedidos) =>{
+
+                //pegando o valor que foi informado no arquivo .json e validando com a tela de lista de pedidos na primeira linha
+                //Em html o ponto . = a uma classe
+                //Em json patho ponto . = um nível dentro do caminho
+                cy.get('tr.first_item .history_link a').should('contain.text', pedidos.id)
+            });       
     });   
     
 });
 
 //#ajuda
 //1 - Geralmente se usa o describe para criar os testes, qual a diferença entre o describe e o context?
+//2-As vezes no cy.get usa-se aspas simples e as vezes aspas duplas, explique melhor a diferença
 
 
 //comandos
