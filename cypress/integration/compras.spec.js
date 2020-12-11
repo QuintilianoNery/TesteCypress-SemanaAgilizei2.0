@@ -112,14 +112,6 @@ context('Compras', () => {
     });   
     
 });
-
-//#ajuda
-//1 - Geralmente se usa o describe para criar os testes, qual a diferença entre o describe e o context?
-//2-As vezes no cy.get usa-se aspas simples e as vezes aspas duplas, explique melhor a diferença
-//3-Observei que no cruso que passou no canal do Youtbe, você colocava ponto e virgula ao final de todo comando cy. mas na semana agilizei,  foi meio que exporádico a utilização do mesmo. Faz diferença usar ou não, ou existe alguns casos?
-
-
-
 //comandos
 //npx cypress open
 //npx cypress run - Modo headless sem a interface mas com o vídeo
