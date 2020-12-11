@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 context('Compras', () => {
-    it('Efetuar uma compra do produto - Faded Short Sleeve T-shirts', () => {
+    it('Efetuar uma compra do produto e verificar seu código na lista de pedidos', () => {
         //Já que o endereço foi informado no cypress.js, como URL padrão, é só colocar cy.visit('/');
         cy.visit('/');
         
