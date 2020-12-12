@@ -1,0 +1,53 @@
+# Nome do workflow
+
+name: CI-CYPRESS
+
+# Comantos de configuração. 
+on:
+  # sempre que tiver um envio para origin ele vai executar estes comandos
+    # Gatilhos de execuções, podendo agendar apra um determinado horário
+  push:
+    branches: [ origin ]
+  pull_request:
+    branches: [ origin ]
+
+  # Abilitar workflow manualmente
+  workflow_dispatch:
+
+# Tarefas do workflow
+jobs:
+  # Onde quero executar o fluxo de trabalho
+  build:
+    # Executar em um windows, linux
+    runs-on: ubuntu-latest
+    
+    # Qual versão do node vai ser utilizada
+    strategy:
+      matrix:
+        node-version: [12.x]
+    
+    # Configurações 
+    # Configuração que instala o node
+    steps:
+        - name: Setup Node.js
+          uses: actions/setup-node@v2.1.2
+          with:
+            node-version: ${{ matrix.node-version }}
+        - uses: actions/checkout@v2
+        #comandos necessários para executar a aplicação da mesma forma que no PC
+        - run: npm install
+        
+        - run: npm run cy:run
+          
+        - run: npm run report:merge
+        
+        - run: npm run report:mocha
+        
+        - name: Deploy to GitHub Pages
+          uses: JamesIves/github-pages-deploy-action@3.5.9
+          with:
+            GITHUB_TOKEN: ${{SECRETS.GITHUB_TOKEN}}
+            BRANCH: gh-pages
+            FOLDER: mochawesome-report
+            
+        - run: npm run cy:das
