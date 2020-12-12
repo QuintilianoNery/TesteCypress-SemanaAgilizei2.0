@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2020-12-12T22:24:36.429Z",
-    "end": "2020-12-12T22:24:50.681Z",
-    "duration": 14252,
+    "start": "2020-12-12T22:36:17.936Z",
+    "end": "2020-12-12T22:36:35.246Z",
+    "duration": 17310,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "f7ae8a89-2a87-4999-bb70-8ba018a7a4bb",
+      "uuid": "f0309def-ab62-47fd-960e-5d92afe6d625",
       "title": "",
       "fullFile": "cypress/integration/compras.spec.js",
       "file": "cypress/integration/compras.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "1206f7b6-214f-4a66-b768-8693f85653eb",
+          "uuid": "21bd6c7c-9808-4dc4-8da3-ce578731d40d",
           "title": "Compras",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Efetuar uma compra do produto e verificar seu código na lista de pedidos",
               "fullTitle": "Compras Efetuar uma compra do produto e verificar seu código na lista de pedidos",
               "timedOut": null,
-              "duration": 14180,
+              "duration": 17245,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "//comando personalizado em supports/commands\ncy.backgroundLogin(); //Já que o endereço foi informado no cypress.js, como URL padrão, é só colocar cy.visit('/');\ncy.visit('/'); //localizar pelo texto que contem na tela\n//Em seguida usar comando trigger que despare um evento o mouse ouver, para passar o mouse por cima\nvar nomeProduto = 'Faded Short Sleeve T-shirts';\ncy.contains(nomeProduto).trigger('mouseover'); //Mecanismo de busca para encontrar o botão para adicionar ao carrinho\n//nome do produto\n// h5\n//acessar a div\n//acessar os a da div\n//  acessar o span Add to cart do a\ncy.contains(nomeProduto) //pai\n.parent() //irmãos\n.siblings('div.button-container') //Filhos do irmão\n.children('a') //selecionar o primeiro elemento filho (add to cart)\n.first().click(); //validar se o produto foi adicionado ao carrinho com sucesso\ncy.get('.icon-ok').parent('') //h2\n.should('contain.text', 'Product successfully added to your shopping cart'); //validar se o nome do produto é o mesmo informado na home page\ncy.get('span#layer_cart_product_title').should('contain.text', nomeProduto); //pai que tenha um filho do tipo a e que tenha um atributo href e que contenha no final o texto controller=order\ncy.get(\".button-container a[href$='controller=order']\").click();\ncy.get(\".cart_navigation a[href$='order&step=1']\").click(); //Página de login, informar as credenciais\n/*       cy.get('#email').type('qa@qa.com');\n      cy.get('#passwd').type('12345'); \n      cy.get('button#SubmitLogin').click();        \n      */\n//validação na tela de confirmação de endereços\n//[type=checkbox]#addressesAreEquals\n//tipo de asserção | Atributo | valor\n//Validar o valor de um determinado atributo\ncy.get('[type=checkbox]#addressesAreEquals').should('have.attr', 'checked', 'checked');\ncy.get('[type=checkbox]#addressesAreEquals').should('have.attr', 'name', 'same');\ncy.get('button[name=processAddress]').click(); //Etapa de entrega\n//marcar o tesmo de serviço\n//opção check() para marcar a opção de um checkbox\ncy.get('[type=checkbox]#cgv').check(); //clicar no botão de prosseguir com o carrinho\ncy.get('button[name=processCarrier]').click(); //forma de pagamento\ncy.get('.bankwire').click();\ncy.get('.cart_navigation button[type=submit]').find('span').contains(\"I confirm my order\").click(); //filtrar o ID do conteúdo do texto e usar para filtrar nos pedidos\n//1. capturar o texto do box\ncy.get('div.box').invoke('text').then(function (text) {\n  console.log(text); //2. filtrar o texto do box, para extrair somente o ID do pedido com expressões regulares\n  //filtrando tudo que começa é termina com letras de A a Z maiúscula, e informando que deseja somente a posição 2 que é o 1\n  console.log(text.match(/[A-Z][A-Z]+/g)[1]); //3. armazenar o ID do pedido de alguma forma\n  //escrita de um  arquivo json com o conteúdo do pedido\n  //Três parâmetros, caminho do arquivo (sempre a partir do root )| conteúdo do arquivo\n  cy.writeFile('cypress/fixtures/pedidos.json', {\n    id: \"\".concat(text.match(/[A-Z][A-Z]+/g)[1])\n  }); //####################48:03\n}); //verificar a ultima tela\ncy.get('.cheque-indent strong') //pode-se usar o Expect ou o should - forma explícita e implícita\n.should('contain.text', 'Your order on My Store is complete.'); //4. obter o id do pedido armazenado de alguma forma\ncy.get(\".cart_navigation a[href$='history']\").click(); //leitura de um arquivo\ncy.readFile('cypress/fixtures/pedidos.json').then(function (pedidos) {\n  //pegando o valor que foi informado no arquivo .json e validando com a tela de lista de pedidos na primeira linha\n  //Em html o ponto . = a uma classe\n  //Em json patho ponto . = um nível dentro do caminho\n  cy.get('tr.first_item .history_link a').should('contain.text', pedidos.id);\n});",
               "err": {},
-              "uuid": "dd5500cf-ec27-442d-a5e0-d076fe91f0a1",
-              "parentUUID": "1206f7b6-214f-4a66-b768-8693f85653eb",
+              "uuid": "a676f724-05a6-41c8-9987-f600f50a6388",
+              "parentUUID": "21bd6c7c-9808-4dc4-8da3-ce578731d40d",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "dd5500cf-ec27-442d-a5e0-d076fe91f0a1"
+            "a676f724-05a6-41c8-9987-f600f50a6388"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 14180,
+          "duration": 17245,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
