@@ -1,2 +1,9 @@
 node_modules/
-cypress/videos/
+
+#cypress
+cypress/screenshots
+cypress/videos
+
+mochawesome-report
+index.json
+.DS_Store
