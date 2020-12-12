@@ -38,6 +38,7 @@ jobs:
         - run: npm install
         
         - run: npm run cy:run
+          continue-on-error: true
           
         - run: npm run report:merge
         
@@ -51,3 +52,4 @@ jobs:
             FOLDER: mochawesome-report
             
         - run: npm run cy:das
+          continue-on-error: true
