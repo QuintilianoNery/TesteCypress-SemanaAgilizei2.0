@@ -6,7 +6,7 @@
   "scripts": {
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
-    "cy:das": "npx cypress run --record --key a4195cd6-5c0c-4bb9-8f1e-e1aea3abed6d  --brouser chrome",
+    "cy:das": "npx cypress run --record --key a4195cd6-5c0c-4bb9-8f1e-e1aea3abed6d",
     "projectId": "vasjsf",
     "report:merge": "mochawesome-merge > index.json",
     "report:mocha": "marge index.json",
