@@ -51,5 +51,5 @@ jobs:
             BRANCH: gh-pages
             FOLDER: mochawesome-report
             
-        - run: npm run cy:das
+        - run: npx cypress run --record --key a4195cd6-5c0c-4bb9-8f1e-e1aea3abed6d
           continue-on-error: true
