@@ -98,6 +98,7 @@ context('Compras', () => {
         //pode-se usar o Expect ou o should - forma explícita e implícita
         .should('contain.text', 'Your order on My Store is complete.');            
 
+
             //4. obter o id do pedido armazenado de alguma forma
             cy.get(".cart_navigation a[href$='history']").click()
 
@@ -115,3 +116,14 @@ context('Compras', () => {
 //comandos
 //npx cypress open
 //npx cypress run - Modo headless sem a interface mas com o vídeo
+
+
+//Dúvida sobre Bootcamp  turma 3
+//Quando inicia o treinamento Bootcamp?
+//Qual o período de duração?
+//Tem a comunidade de alunos da turma ou com as outras turmas anteriores? 
+
+
+//mochawesome
+//mochawesome-merge
+//mochawesome-reporte-generator 

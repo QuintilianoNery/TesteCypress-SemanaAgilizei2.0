@@ -5,5 +5,9 @@
   "experimentalSourceRewriting": true,
   "viewportWidth": 1536,
   "viewportHeight": 960,
-  "projectId": "vasjsf"
+  "projectId": "vasjsf",
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+    "configFile": "cypress-config.json"
+  }
 }

@@ -5,8 +5,12 @@
   "main": "index.js",
   "scripts": {
     "cy:open": "npx cypress open",
+    "cy:run": "npx cypress run",
+    "cy:das": "npx cypress run --record --key a4195cd6-5c0c-4bb9-8f1e-e1aea3abed6d  --brouser chrome",
     "projectId": "vasjsf",
-    "cy:run": "npx cypress run --record --key a4195cd6-5c0c-4bb9-8f1e-e1aea3abed6d --brouser chrome"
+    "report:merge": "mochawesome-merge > index.json",
+    "report:mocha": "marge index.json",
+    "report:clean": "rimraf mochawesome-report index.json"
   },
   "repository": {
     "type": "git",
@@ -20,6 +24,12 @@
   },
   "homepage": "https://github.com/QuintilianoNery/TesteCypress-SemanaAgilizei2.0#readme",
   "devDependencies": {
-    "cypress": "^6.0.1"
+    "cypress": "^6.0.1",
+    "cypress-multi-reporters": "^1.4.0",
+    "mocha": "^8.2.1",
+    "mochawesome": "^6.2.1",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.1.0",
+    "rimraf": "^3.0.2"
   }
 }
