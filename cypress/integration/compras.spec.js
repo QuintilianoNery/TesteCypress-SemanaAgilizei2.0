@@ -83,7 +83,7 @@ context('Compras', () => {
             
             //2. filtrar o texto do box, para extrair somente o ID do pedido com expressões regulares
             //filtrando tudo que começa é termina com letras de A a Z maiúscula, e informando que deseja somente a posição 2 que é o 1
-            console.log(text.match(/[A-Z][A-Z]+/g)[1])
+            console.log(textesdd.match(/[A-Z][A-Z]+/g)[1])
             
             //3. armazenar o ID do pedido de alguma forma
             //escrita de um  arquivo json com o conteúdo do pedido
