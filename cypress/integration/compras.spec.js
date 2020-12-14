@@ -98,7 +98,6 @@ context('Compras', () => {
         //pode-se usar o Expect ou o should - forma explícita e implícita
         .should('contain.text', 'Your order on My Store is complete.');            
 
-
             //4. obter o id do pedido armazenado de alguma forma
             cy.get(".cart_navigation a[href$='history']").click()
 
