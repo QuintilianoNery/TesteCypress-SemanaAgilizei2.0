@@ -122,7 +122,6 @@ context('Compras', () => {
 //Qual o período de duração?
 //Tem a comunidade de alunos da turma ou com as outras turmas anteriores? 
 
-
 //mochawesome
 //mochawesome-merge
 //mochawesome-reporte-generator 
