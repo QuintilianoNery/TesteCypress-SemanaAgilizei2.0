@@ -1,4 +1,5 @@
 # TesteCypress-SemanaAgilizei2.0
+[](https://github.com/QuintilianoNery/TesteCypress-SemanaAgilizei2.0/blob/origin/estudos.png)
 
 Projeto de automação de testes com participação na Semana Agilizei 2.0 utilizando o site [Automation Practice](http://automationpractice.com/index.php) 
 
