@@ -38,7 +38,6 @@ jobs:
         - run: npm install
         
         - run: npm run cy:run
-          continue-on-error: true
           
         - run: npm run report:merge
         
@@ -52,4 +51,3 @@ jobs:
             FOLDER: mochawesome-report
             
         - run: npx cypress run --record --key a4195cd6-5c0c-4bb9-8f1e-e1aea3abed6d
-          continue-on-error: true
