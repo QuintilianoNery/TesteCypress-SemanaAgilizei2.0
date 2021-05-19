@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2021-05-19T22:06:01.614Z",
-    "end": "2021-05-19T22:06:15.277Z",
-    "duration": 13663,
+    "start": "2021-05-19T22:06:43.525Z",
+    "end": "2021-05-19T22:06:57.268Z",
+    "duration": 13743,
     "testsRegistered": 1,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "1adc2f2b-47bb-4985-bcca-1c7394b4cb09",
+      "uuid": "86fcee6a-e62b-4286-b5d5-1af46d153aaa",
       "title": "",
       "fullFile": "cypress/integration/compras.spec.js",
       "file": "cypress/integration/compras.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "5677f100-f9ce-441b-8115-b3fa5800856c",
+          "uuid": "53f925ff-9278-41fa-b418-80fdc24e2756",
           "title": "Compras",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Efetuar uma compra do produto e verificar seu código na lista de pedidos",
               "fullTitle": "Compras Efetuar uma compra do produto e verificar seu código na lista de pedidos",
               "timedOut": null,
-              "duration": 13601,
+              "duration": 13680,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "AssertionError: Timed out retrying: Expected to find element: `[type=checkbox]#addressesAreEquals`, but never found it.\n    at Context.eval (http://automationpractice.com/__cypress/tests?p=cypress/integration/compras.spec.js:139:50)",
                 "diff": null
               },
-              "uuid": "50241186-86cc-4735-8c1a-440751e54932",
-              "parentUUID": "5677f100-f9ce-441b-8115-b3fa5800856c",
+              "uuid": "395002bf-6bb7-43a0-916f-d9efe8552097",
+              "parentUUID": "53f925ff-9278-41fa-b418-80fdc24e2756",
               "isHook": false,
               "skipped": false
             }
@@ -60,11 +60,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "50241186-86cc-4735-8c1a-440751e54932"
+            "395002bf-6bb7-43a0-916f-d9efe8552097"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 13601,
+          "duration": 13680,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
